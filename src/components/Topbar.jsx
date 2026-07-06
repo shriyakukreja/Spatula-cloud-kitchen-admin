@@ -1,5 +1,5 @@
 // File: src/components/Topbar.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Topbar.css";
 
 function getFormattedDate() {
@@ -13,7 +13,18 @@ function getFormattedDate() {
 }
 
 export default function Topbar({ title = "Dashboard", subtitle }) {
-  const [query, setQuery] = useState("");
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("spatula-theme") || "dark";
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("spatula-theme", theme);
+  }, [theme]);
+
+  function toggleTheme() {
+    setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"));
+  }
 
   return (
     <header className="topbar">
@@ -23,6 +34,16 @@ export default function Topbar({ title = "Dashboard", subtitle }) {
       </div>
 
       <div className="topbar-actions">
+        <button
+          className="topbar-theme-toggle"
+          onClick={toggleTheme}
+          aria-label="Toggle light and dark mode"
+          title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+        >
+          <span>{theme === "dark" ? "☾" : "☀"}</span>
+          <strong>{theme === "dark" ? "Dark" : "Light"}</strong>
+        </button>
+
         <div className="topbar-date" title={getFormattedDate()}>
           <CalendarIcon />
           <span>{getFormattedDate()}</span>
@@ -34,7 +55,7 @@ export default function Topbar({ title = "Dashboard", subtitle }) {
         </button>
 
         <div className="topbar-profile">
-          <div className="topbar-avatar">AR</div>
+          <div className="topbar-avatar">SK</div>
           <div className="topbar-profile-text">
             <span className="topbar-profile-name">Shriya Kukreja</span>
             <span className="topbar-profile-role">Admin</span>
@@ -43,15 +64,6 @@ export default function Topbar({ title = "Dashboard", subtitle }) {
         </div>
       </div>
     </header>
-  );
-}
-
-function SearchIcon() {
-  return (
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
-      <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="1.7" />
-      <path d="M20 20l-4.3-4.3" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-    </svg>
   );
 }
 

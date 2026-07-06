@@ -5,7 +5,7 @@
   left: 0;
   bottom: 0;
   width: var(--sidebar-width);
-  background: linear-gradient(180deg, #100e0c 0%, #0a0908 100%);
+  background: linear-gradient(180deg,var(--color-bg-soft) 0%,var(--color-bg) 100%);
   border-right: 1px solid var(--color-border-soft);
   display: flex;
   flex-direction: column;

@@ -67,3 +67,20 @@
   --transition-base: 220ms var(--ease-out);
   --transition-slow: 380ms var(--ease-out);
 }
+[data-theme="light"] {
+  --color-bg: #f7f4ee;
+  --color-bg-soft: #fffaf2;
+  --color-surface: #ffffff;
+  --color-surface-raised: #fff8ee;
+  --color-surface-hover: #fff0d6;
+  --color-border: #ead8bd;
+  --color-border-soft: #f0e2cc;
+
+  --color-text: #201712;
+  --color-text-muted: #6f6256;
+  --color-text-faint: #9a8d80;
+
+  --shadow-sm: 0 2px 8px rgba(80, 50, 20, 0.08);
+  --shadow-md: 0 8px 24px rgba(80, 50, 20, 0.12);
+  --shadow-lg: 0 20px 48px rgba(80, 50, 20, 0.18);
+}
