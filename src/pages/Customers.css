@@ -1,0 +1,89 @@
+/* File: src/pages/Customers.css */
+.customers-page-panel {
+  padding-bottom: 10px;
+}
+
+.customers-table-scroll {
+  overflow-x: auto;
+  margin-top: 18px;
+  padding: 0 8px 8px;
+}
+
+.customers-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 640px;
+}
+
+.customers-table thead th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-border-soft);
+  white-space: nowrap;
+}
+
+.customers-table tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-border-soft);
+  font-size: 13.5px;
+  color: var(--color-text);
+  vertical-align: middle;
+}
+
+.customers-table tbody tr:hover {
+  background: var(--color-surface-hover);
+}
+
+.customers-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.customers-table-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.customers-table-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  border: 1px solid rgba(246, 163, 19, 0.24);
+  flex-shrink: 0;
+}
+
+.customers-table-spend {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.customers-table-action {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-accent);
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  white-space: nowrap;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.customers-table-action:hover {
+  border-color: var(--color-accent-dark);
+  background: var(--color-accent-soft);
+}

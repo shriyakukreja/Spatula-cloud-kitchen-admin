@@ -1,0 +1,162 @@
+/* File: src/pages/Menu.css */
+.menu-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-page-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.menu-page-filter {
+  padding: 9px 16px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-pill);
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.menu-page-filter:hover {
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.menu-page-filter.is-active {
+  color: var(--color-bg);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.menu-page-add {
+  margin-left: auto;
+  padding: 9px 18px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--color-bg);
+  background: var(--color-accent);
+  border-radius: var(--radius-pill);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.menu-page-add:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.menu-card {
+  background: linear-gradient(180deg, var(--color-surface-raised) 0%, var(--color-surface) 100%);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.menu-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-accent-dark);
+}
+
+.menu-card-image-wrap {
+  position: relative;
+  height: 150px;
+}
+
+.menu-card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-card-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(6px);
+}
+
+.menu-card-badge.is-available {
+  color: var(--color-success);
+  background: rgba(61, 220, 132, 0.18);
+}
+
+.menu-card-badge.is-unavailable {
+  color: var(--color-danger);
+  background: rgba(255, 92, 92, 0.18);
+}
+
+.menu-card-body {
+  padding: 16px 18px 18px;
+}
+
+.menu-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.menu-card-top h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.menu-card-rating {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.menu-card-category {
+  font-size: 11.5px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.menu-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.menu-card-price {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.menu-card-edit {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-accent);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.menu-card-edit:hover {
+  border-color: var(--color-accent-dark);
+  background: var(--color-accent-soft);
+}

@@ -1,0 +1,97 @@
+/* File: src/components/StatusOverview.css */
+
+.status-overview-panel {
+  align-self: start;
+}
+
+.status-range-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.status-range-tabs button {
+  border: 1px solid rgba(246, 163, 19, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text-muted);
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.status-range-tabs button.is-active,
+.status-range-tabs button:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.status-overview-list {
+  padding: 14px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.status-overview-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+}
+
+.status-overview-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid var(--tone-color, var(--color-accent));
+  color: var(--tone-color, var(--color-accent));
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.status-overview-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+.status-overview-text span {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-overview-text strong {
+  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.status-overview-row--pending {
+  --tone-color: var(--color-status-pending);
+}
+
+.status-overview-row--preparing {
+  --tone-color: var(--color-status-preparing);
+}
+
+.status-overview-row--delivered {
+  --tone-color: var(--color-status-delivered);
+}
+
+.status-overview-row--out {
+  --tone-color: var(--color-status-out);
+}
+
+.status-overview-row--cancelled {
+  --tone-color: var(--color-status-cancelled);
+}

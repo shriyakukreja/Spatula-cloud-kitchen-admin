@@ -1,0 +1,69 @@
+/* File: src/styles/variables.css */
+/* ==========================================================================
+   Spatula Cloud Kitchen — design
+   Theme derived from the Roister restaurant template: black canvas,
+   ember-orange accent, warm off-white type, serif display for brand
+   moments, clean grotesque for data-dense UI.
+   ========================================================================== */
+
+:root {
+  /* ---------- Core palette ---------- */
+  --color-bg: #0a0908;
+  --color-bg-soft: #100f0d;
+  --color-surface: #161412;
+  --color-surface-raised: #1c1a17;
+  --color-surface-hover: #221f1b;
+  --color-border: #2b2723;
+  --color-border-soft: #201d19;
+
+  --color-accent: #f6a313;
+  --color-accent-hover: #ffb733;
+  --color-accent-dark: #b97a0a;
+  --color-accent-soft: rgba(246, 163, 19, 0.12);
+  --color-accent-soft-strong: rgba(246, 163, 19, 0.22);
+
+  --color-text: #f6f3ee;
+  --color-text-muted: #a8a29a;
+  --color-text-faint: #726c63;
+
+  /* ---------- Status palette ---------- */
+  --color-status-pending: #f6a313;
+  --color-status-preparing: #4fa8ff;
+  --color-status-ready: #3ddc84;
+  --color-status-out: #b98cff;
+  --color-status-delivered: #2ecc71;
+  --color-status-cancelled: #ff5c5c;
+
+  --color-success: #3ddc84;
+  --color-danger: #ff5c5c;
+  --color-info: #4fa8ff;
+
+  /* ---------- Typography ---------- */
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", monospace;
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* ---------- Shadow ---------- */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.28);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.36);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.5);
+  --shadow-accent-glow: 0 0 0 1px rgba(246, 163, 19, 0.16), 0 12px 32px rgba(246, 163, 19, 0.08);
+
+  /* ---------- Layout ---------- */
+  --sidebar-width: 264px;
+  --sidebar-width-collapsed: 84px;
+  --topbar-height: 64px;
+  --content-max-width: 1440px;
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 150ms var(--ease-out);
+  --transition-base: 220ms var(--ease-out);
+  --transition-slow: 380ms var(--ease-out);
+}

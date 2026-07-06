@@ -1,0 +1,56 @@
+/* File: src/components/StatusBadge.css */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 5px 11px 5px 9px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.status-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.status-badge--pending {
+  color: var(--color-status-pending);
+  background: rgba(246, 163, 19, 0.12);
+  border-color: rgba(246, 163, 19, 0.24);
+}
+
+.status-badge--preparing {
+  color: var(--color-status-preparing);
+  background: rgba(79, 168, 255, 0.12);
+  border-color: rgba(79, 168, 255, 0.24);
+}
+
+.status-badge--ready {
+  color: var(--color-status-ready);
+  background: rgba(61, 220, 132, 0.12);
+  border-color: rgba(61, 220, 132, 0.24);
+}
+
+.status-badge--out {
+  color: var(--color-status-out);
+  background: rgba(185, 140, 255, 0.14);
+  border-color: rgba(185, 140, 255, 0.26);
+}
+
+.status-badge--delivered {
+  color: var(--color-status-delivered);
+  background: rgba(46, 204, 113, 0.12);
+  border-color: rgba(46, 204, 113, 0.24);
+}
+
+.status-badge--cancelled {
+  color: var(--color-status-cancelled);
+  background: rgba(255, 92, 92, 0.12);
+  border-color: rgba(255, 92, 92, 0.24);
+}

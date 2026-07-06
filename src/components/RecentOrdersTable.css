@@ -1,0 +1,139 @@
+/* File: src/components/RecentOrdersTable.css */
+.orders-table-panel {
+  padding-bottom: 8px;
+}
+
+.orders-table-view-all {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--color-accent);
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.orders-table-view-all:hover {
+  border-color: var(--color-accent-dark);
+  background: var(--color-accent-soft);
+}
+
+.orders-table-scroll {
+  overflow-x: auto;
+  margin-top: 18px;
+  padding: 0 8px 8px;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 940px;
+}
+
+.orders-table thead th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-border-soft);
+  white-space: nowrap;
+}
+
+.orders-table tbody td {
+  padding: 15px 16px;
+  border-bottom: 1px solid var(--color-border-soft);
+  font-size: 13.5px;
+  color: var(--color-text);
+  vertical-align: middle;
+}
+
+.orders-table tbody tr {
+  transition: background var(--transition-fast);
+}
+
+.orders-table tbody tr:hover {
+  background: var(--color-surface-hover);
+}
+
+.orders-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.orders-table-id {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.orders-table-customer {
+  font-weight: 700;
+}
+
+.orders-table-items {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color-text-muted);
+}
+
+.orders-table-platform {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.orders-table-platform-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.orders-table-payment {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.orders-table-payment--paid {
+  color: var(--color-success);
+  background: rgba(61, 220, 132, 0.12);
+}
+
+.orders-table-payment--pending {
+  color: var(--color-status-pending);
+  background: rgba(246, 163, 19, 0.12);
+}
+
+.orders-table-amount {
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.orders-table-action {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-bg);
+  background: var(--color-accent);
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.orders-table-action:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
