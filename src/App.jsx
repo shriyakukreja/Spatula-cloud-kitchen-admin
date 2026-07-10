@@ -19,7 +19,7 @@ export default function App() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/customers" element={<Customers />} />
           <Route path="/payments" element={<Payments />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/settings" element={<Settings />} /> 
         </Route>
       </Routes>
     </BrowserRouter>
