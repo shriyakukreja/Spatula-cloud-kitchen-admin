@@ -184,3 +184,17 @@
     display: none;
   }
 }
+.sidebar-status--open .sidebar-status-dot {
+  background: var(--color-success);
+  box-shadow: 0 0 0 4px rgba(61, 220, 132, 0.14);
+}
+
+.sidebar-status--preparing .sidebar-status-dot {
+  background: var(--color-status-pending);
+  box-shadow: 0 0 0 4px rgba(246, 163, 19, 0.14);
+}
+
+.sidebar-status--closed .sidebar-status-dot {
+  background: var(--color-danger);
+  box-shadow: 0 0 0 4px rgba(255, 92, 92, 0.14);
+}

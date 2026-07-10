@@ -39,7 +39,7 @@
 .orders-page-search {
   width: 100%;
   max-width: 520px;
-  border: 1px solid rgba(246, 163, 19, 0.25);
+  border: 1px solid var(--color-border-soft);
   background: rgba(255, 255, 255, 0.05);
   color: var(--color-text);
   padding: 14px 16px;
@@ -48,7 +48,7 @@
 }
 
 .orders-page-search::placeholder {
-  color: var(--color-muted);
+  color: var(--color-text-muted);
 }
 
 .orders-page-search:focus {
@@ -67,7 +67,7 @@
 
 .order-modal {
   width: min(620px, 100%);
-  background: #11100f;
+  background: var(--color-surface-raised);
   border: 1px solid rgba(246, 163, 19, 0.25);
   border-radius: 24px;
   padding: 26px;
@@ -98,7 +98,7 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 1px solid rgba(246, 163, 19, 0.25);
+  border: 1px solid var(--color-border-soft);
   background: transparent;
   color: var(--color-text);
   font-size: 1.5rem;
@@ -126,7 +126,7 @@
 }
 
 .order-modal-section span {
-  color: var(--color-muted);
+  color: var(--color-text-muted);
 }
 
 .order-modal-section ul {
@@ -143,4 +143,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 18px;
+}
+[data-theme="light"] .order-modal-backdrop {
+  background: rgba(0, 0, 0, 0.35);
 }

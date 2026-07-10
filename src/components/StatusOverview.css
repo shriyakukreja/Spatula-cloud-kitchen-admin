@@ -4,9 +4,73 @@
   align-self: start;
 }
 
+.status-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 18px;
+}
+
+.status-overview-card {
+   padding: 14px 12px;
+  min-height: 82px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-top: 3px solid var(--tone-color, var(--color-accent));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.status-overview-card:hover {
+  transform: translateY(-2px);
+}
+
+.status-overview-count {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.status-overview-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.status-overview-card--pending {
+  --tone-color: var(--color-status-pending);
+}
+
+.status-overview-card--preparing {
+  --tone-color: var(--color-status-preparing);
+}
+
+.status-overview-card--ready {
+  --tone-color: var(--color-status-ready);
+}
+
+.status-overview-card--out {
+  --tone-color: var(--color-status-out);
+}
+
+.status-overview-card--delivered {
+  --tone-color: var(--color-status-delivered);
+}
+
+.status-overview-card--cancelled {
+  --tone-color: var(--color-status-cancelled);
+}
+
 .status-range-tabs {
   display: flex;
-  gap: 6px;
+  gap: 3px;
   flex-wrap: wrap;
 }
 
@@ -27,71 +91,14 @@
   color: var(--color-bg);
 }
 
-.status-overview-list {
-  padding: 14px 18px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+@media (max-width: 900px) {
+  .status-overview-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.status-overview-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
-  border-radius: var(--radius-md);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-soft);
-}
-
-.status-overview-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  border: 1px solid var(--tone-color, var(--color-accent));
-  color: var(--tone-color, var(--color-accent));
-  display: grid;
-  place-items: center;
-  font-weight: 900;
-  flex-shrink: 0;
-}
-
-.status-overview-text {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  width: 100%;
-}
-
-.status-overview-text span {
-  color: var(--color-text-muted);
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.status-overview-text strong {
-  color: var(--color-text);
-  font-size: 18px;
-  font-weight: 800;
-}
-
-.status-overview-row--pending {
-  --tone-color: var(--color-status-pending);
-}
-
-.status-overview-row--preparing {
-  --tone-color: var(--color-status-preparing);
-}
-
-.status-overview-row--delivered {
-  --tone-color: var(--color-status-delivered);
-}
-
-.status-overview-row--out {
-  --tone-color: var(--color-status-out);
-}
-
-.status-overview-row--cancelled {
-  --tone-color: var(--color-status-cancelled);
+@media (max-width: 480px) {
+  .status-overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

@@ -2,15 +2,6 @@
 import React, { useState } from "react";
 import "./StatusOverview.css";
 
-const statusIcons = {
-  total: "✓",
-  delivered: "✓",
-  pending: "!",
-  preparing: "•",
-  out: "→",
-  cancelled: "×",
-};
-
 export default function StatusOverview({ statuses }) {
   const [activeRange, setActiveRange] = useState("daily");
 
@@ -23,7 +14,7 @@ export default function StatusOverview({ statuses }) {
       <div className="panel-header">
         <div>
           <h3 className="panel-title">Order Status</h3>
-          <p className="panel-subtitle">Kitchen queue summary</p>
+          <p className="panel-subtitle">Live breakdown of the kitchen queue</p>
         </div>
 
         <div className="status-range-tabs">
@@ -48,20 +39,14 @@ export default function StatusOverview({ statuses }) {
         </div>
       </div>
 
-      <div className="status-overview-list">
-        {currentStatuses.map((status) => (
+      <div className="status-overview-grid">
+        {currentStatuses.map((s) => (
           <div
-            key={status.id}
-            className={`status-overview-row status-overview-row--${status.tone}`}
+            key={s.id}
+            className={`status-overview-card status-overview-card--${s.tone}`}
           >
-            <div className="status-overview-icon">
-              {statusIcons[status.id] || "•"}
-            </div>
-
-            <div className="status-overview-text">
-              <span>{status.label}</span>
-              <strong>{status.count}</strong>
-            </div>
+            <span className="status-overview-count">{s.count}</span>
+            <span className="status-overview-label">{s.label}</span>
           </div>
         ))}
       </div>

@@ -20,7 +20,9 @@ export default function Payments() {
         <div className="panel-header">
           <div>
             <h3 className="panel-title">Transactions</h3>
-            <p className="panel-subtitle">Latest settlements across all platforms</p>
+            <p className="panel-subtitle">
+              Billing, GST, discounts, commissions and payout status
+            </p>
           </div>
         </div>
 
@@ -32,25 +34,56 @@ export default function Payments() {
                 <th>Order ID</th>
                 <th>Platform</th>
                 <th>Method</th>
-                <th>Amount</th>
+                <th>Subtotal</th>
+                <th>Discount</th>
+                <th>GST</th>
+                <th>Final Amount</th>
+                <th>Commission</th>
+                <th>Net Payout</th>
                 <th>Status</th>
                 <th>Date</th>
               </tr>
             </thead>
+
             <tbody>
-              {transactions.map((txn) => (
-                <tr key={txn.id}>
-                  <td className="payments-table-id">{txn.id}</td>
-                  <td className="text-muted">{txn.orderId}</td>
-                  <td>{txn.platform}</td>
-                  <td className="text-muted">{txn.method}</td>
-                  <td className="payments-table-amount">₹{txn.amount.toLocaleString("en-IN")}</td>
+              {transactions.map((transaction) => (
+                <tr key={transaction.id}>
+                  <td className="payments-table-id">{transaction.id}</td>
+                  <td className="text-muted">{transaction.orderId}</td>
+                  <td>{transaction.platform}</td>
+                  <td className="text-muted">{transaction.method}</td>
+
+                  <td className="payments-table-amount">
+                    ₹{transaction.subtotal.toLocaleString("en-IN")}
+                  </td>
+
+                  <td className="payments-table-discount">
+                    {transaction.discount > 0
+                      ? `-₹${transaction.discount.toLocaleString("en-IN")}`
+                      : "—"}
+                  </td>
+
+                  <td>₹{transaction.gst.toLocaleString("en-IN")}</td>
+
+                  <td className="payments-table-amount">
+                    ₹{transaction.finalAmount.toLocaleString("en-IN")}
+                  </td>
+
+                  <td>₹{transaction.commission.toLocaleString("en-IN")}</td>
+
+                  <td className="payments-table-amount">
+                    ₹{transaction.netPayout.toLocaleString("en-IN")}
+                  </td>
+
                   <td>
-                    <span className={`payments-status payments-status--${txn.status.toLowerCase()}`}>
-                      {txn.status}
+                    <span
+                      className={`payments-status payments-status--${transaction.status.toLowerCase()}`}
+                    >
+                      {transaction.status}
                     </span>
                   </td>
-                  <td className="text-muted">{txn.date}</td>
+
+                  <td className="text-muted">{transaction.date}</td>
                 </tr>
               ))}
             </tbody>

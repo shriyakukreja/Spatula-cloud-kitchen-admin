@@ -34,7 +34,7 @@ export const dashboardStats = [
     id: "pending-orders",
     label: "Pending Orders",
     value: "8",
-    change: "-2 orders",
+    change: "2 orders",
     trend: "down",
     icon: "pending",
     caption: "Needs attention",

@@ -1,34 +1,42 @@
 /* File: src/pages/Menu.css */
+
 .menu-page {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
-.menu-page-filters {
+.menu-page-filters,
+.menu-type-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
 }
 
-.menu-page-filter {
-  padding: 9px 16px;
-  font-size: 12.5px;
+.menu-page-filter,
+.menu-type-filter {
+  padding: 8px 14px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--color-text-muted);
   background: var(--color-surface);
   border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-pill);
-  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    background var(--transition-fast);
 }
 
-.menu-page-filter:hover {
+.menu-page-filter:hover,
+.menu-type-filter:hover {
   color: var(--color-text);
   border-color: var(--color-border);
 }
 
-.menu-page-filter.is-active {
+.menu-page-filter.is-active,
+.menu-type-filter.is-active {
   color: var(--color-bg);
   background: var(--color-accent);
   border-color: var(--color-accent);
@@ -36,9 +44,9 @@
 
 .menu-page-add {
   margin-left: auto;
-  padding: 9px 18px;
-  font-size: 12.5px;
-  font-weight: 700;
+  padding: 8px 18px;
+  font-size: 12px;
+  font-weight: 800;
   color: var(--color-bg);
   background: var(--color-accent);
   border-radius: var(--radius-pill);
@@ -52,17 +60,23 @@
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+  gap: 16px;
 }
 
 .menu-card {
-  background: linear-gradient(180deg, var(--color-surface-raised) 0%, var(--color-surface) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--color-surface-raised) 0%,
+    var(--color-surface) 100%
+  );
   border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-base), border-color var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base);
 }
 
 .menu-card:hover {
@@ -72,7 +86,7 @@
 
 .menu-card-image-wrap {
   position: relative;
-  height: 150px;
+  height: 142px;
 }
 
 .menu-card-image-wrap img {
@@ -85,9 +99,9 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 10.5px;
-  font-weight: 700;
-  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 9px;
   border-radius: var(--radius-pill);
   backdrop-filter: blur(6px);
 }
@@ -103,27 +117,39 @@
 }
 
 .menu-card-body {
-  padding: 16px 18px 18px;
+  padding: 14px 16px 16px;
 }
 
 .menu-card-top {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 8px;
 }
 
 .menu-card-top h4 {
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 700;
   color: var(--color-text);
+  line-height: 1.25;
 }
 
-.menu-card-rating {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--color-accent);
+.menu-card-type {
   flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.menu-card-type.is-veg {
+  color: var(--color-success);
+  background: rgba(61, 220, 132, 0.14);
+}
+
+.menu-card-type.is-nonveg {
+  color: var(--color-danger);
+  background: rgba(255, 92, 92, 0.14);
 }
 
 .menu-card-category {
@@ -132,31 +158,228 @@
   margin-top: 4px;
 }
 
+.menu-card-info {
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 10px;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--color-border);
+  color: var(--color-accent);
+  font-size: 11.5px;
+  font-weight: 800;
+  text-align: left;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.menu-card-info:hover {
+  background: var(--color-accent-soft);
+  border-color: var(--color-accent);
+}
+
 .menu-card-footer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
   margin-top: 14px;
 }
 
 .menu-card-price {
   font-family: var(--font-mono);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-text);
 }
 
-.menu-card-edit {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--color-accent);
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--color-border);
-  transition: border-color var(--transition-fast), background var(--transition-fast);
+.menu-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
 }
 
-.menu-card-edit:hover {
+.menu-card-edit,
+.menu-card-toggle,
+.menu-card-secondary {
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.menu-card-edit,
+.menu-card-secondary {
+  color: var(--color-accent);
+}
+
+.menu-card-toggle.is-on {
+  color: var(--color-danger);
+}
+
+.menu-card-toggle.is-off {
+  color: var(--color-success);
+}
+
+.menu-card-edit:hover,
+.menu-card-toggle:hover,
+.menu-card-secondary:hover {
   border-color: var(--color-accent-dark);
   background: var(--color-accent-soft);
+}
+
+.menu-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.72);
+  z-index: 999;
+}
+
+[data-theme="light"] .menu-modal-backdrop {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.menu-modal {
+  width: min(620px, 100%);
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-lg);
+}
+
+.menu-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.menu-modal-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.menu-modal-header button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-soft);
+  color: var(--color-text);
+  font-size: 22px;
+}
+
+.menu-modal-eyebrow {
+  margin: 0 0 6px;
+  color: var(--color-accent);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.menu-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.menu-modal-grid div,
+.menu-modal-info-box {
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+}
+
+.menu-modal-grid span,
+.menu-modal-info-box span,
+.menu-form-grid label {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.menu-modal-grid strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--color-text);
+}
+
+.menu-modal-info-box {
+  margin-top: 12px;
+}
+
+.menu-modal-info-box p {
+  margin: 8px 0 0;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.menu-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.menu-form-wide {
+  grid-column: 1 / -1;
+}
+
+.menu-form-grid input,
+.menu-form-grid select {
+  width: 100%;
+  margin-top: 7px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-surface);
+  color: var(--color-text);
+  outline: none;
+}
+
+.menu-form-grid input:focus,
+.menu-form-grid select:focus {
+  border-color: var(--color-accent);
+}
+
+.menu-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.menu-form-actions button {
+  padding: 9px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 800;
+  border: 1px solid var(--color-border-soft);
+}
+
+.menu-form-actions button[type="submit"] {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
+}
+
+@media (max-width: 560px) {
+  .menu-modal-grid,
+  .menu-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-page-add {
+    margin-left: 0;
+  }
 }

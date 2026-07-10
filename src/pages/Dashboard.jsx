@@ -4,14 +4,13 @@ import StatCard from "../components/StatCard.jsx";
 import RecentOrdersTable from "../components/RecentOrdersTable.jsx";
 import SourceAnalytics from "../components/SourceAnalytics.jsx";
 import TopSelling from "../components/TopSelling.jsx";
-import CustomerSnapshot from "../components/CustomerSnapshot.jsx";
+import OrderActivity from "../components/OrderActivity.jsx";
 import StatusOverview from "../components/StatusOverview.jsx";
 
 import { dashboardStats } from "../data/stats.js";
-import { recentOrders } from "../data/orders.js";
+import { dashboardRecentOrders } from "../data/orders.js";
 import { platformAnalytics } from "../data/platformData.js";
 import { topSellingItems } from "../data/topSelling.js";
-import { recentCustomers } from "../data/customers.js";
 import { statusOverview } from "../data/statusData.js";
 
 import "./Dashboard.css";
@@ -33,12 +32,12 @@ export default function Dashboard() {
       </section>
 
       <section className="dashboard-row">
-        <RecentOrdersTable orders={recentOrders} onViewDetails={setSelectedOrder} />
+        <RecentOrdersTable orders={dashboardRecentOrders } onViewDetails={setSelectedOrder} />
       </section>
 
       <section className="dashboard-row dashboard-row--split">
         <TopSelling items={topSellingItems} />
-        <CustomerSnapshot customers={recentCustomers} />
+        <OrderActivity />
       </section>
 
       {selectedOrder && (

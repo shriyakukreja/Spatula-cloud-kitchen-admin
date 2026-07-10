@@ -1,5 +1,5 @@
 // File: src/components/Sidebar.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
 
@@ -13,6 +13,39 @@ const navItems = [
 ];
 
 export default function Sidebar() {
+  const [kitchenStatus, setKitchenStatus] = useState(() => {
+    return localStorage.getItem("spatula-kitchen-status") || "open";
+  });
+
+  useEffect(() => {
+    function syncKitchenStatus() {
+      setKitchenStatus(localStorage.getItem("spatula-kitchen-status") || "open");
+    }
+
+    window.addEventListener("spatula-kitchen-status-change", syncKitchenStatus);
+    window.addEventListener("storage", syncKitchenStatus);
+
+    return () => {
+      window.removeEventListener("spatula-kitchen-status-change", syncKitchenStatus);
+      window.removeEventListener("storage", syncKitchenStatus);
+    };
+  }, []);
+
+  const kitchenStatusText = {
+    open: {
+      title: "Kitchen Live",
+      subtitle: "All systems normal",
+    },
+    preparing: {
+      title: "Kitchen Preparing",
+      subtitle: "Getting ready to open",
+    },
+    closed: {
+      title: "Kitchen Closed",
+      subtitle: "Orders are paused",
+    },
+  };
+
   return (
     <aside className="sidebar">
       <div className="sidebar-brand">
@@ -48,11 +81,15 @@ export default function Sidebar() {
       </nav>
 
       <div className="sidebar-footer">
-        <div className="sidebar-status">
+        <div className={`sidebar-status sidebar-status--${kitchenStatus}`}>
           <span className="sidebar-status-dot" />
           <div>
-            <p className="sidebar-status-title">Kitchen Live</p>
-            <p className="sidebar-status-sub">All systems normal</p>
+            <p className="sidebar-status-title">
+              {kitchenStatusText[kitchenStatus].title}
+            </p>
+            <p className="sidebar-status-sub">
+              {kitchenStatusText[kitchenStatus].subtitle}
+            </p>
           </div>
         </div>
       </div>
